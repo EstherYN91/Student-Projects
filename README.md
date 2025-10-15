@@ -1,5 +1,5 @@
 # My Student Projects
-This repository contains all the student coding projects I worked on studying computing languages from different sources including Harvard C50 and Coursera
+This repository contains all the student coding projects I worked on studying computing languages from different sources including Harvard C50 and Coursera.
 
 ## How It's Made:
 
@@ -11,3 +11,5 @@ I took an entire afternoon and evening to complete my first student project Cred
 
 * Code one part at a time. Break down the problem into different parts and make sure each part of the code works before proceeding to the next.
 * Try to combine similar conditionals together where possible.
+* Make the format neat so codes are not all over the place.
+* If in doubt of a code, printf() in C will help to check if the output is as intended.
