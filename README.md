@@ -1,5 +1,5 @@
 # My Student Projects
-This repository contains all the student coding projects I worked on studying computing languages from different sources including Harvard C50 and Coursera.
+This repository contains all the coding projects I worked on studying computing languages from different sources.
 
 ## How It's Made:
 
