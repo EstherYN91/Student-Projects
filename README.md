@@ -13,3 +13,4 @@ I took an entire afternoon and evening to complete my first student project. Thi
 * Try to combine similar conditionals together where possible.
 * Make the format neat so codes are not all over the place.
 * If in doubt of a code, printf() in C will help to check if the output is as intended.
+
