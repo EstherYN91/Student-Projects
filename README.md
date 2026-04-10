@@ -14,3 +14,4 @@ I took an entire afternoon and evening to complete my first student project. Thi
 * Make the format neat so codes are not all over the place.
 * If in doubt of a code, printf() in C will help to check if the output is as intended.
 
+UPDATE: Due to academic policy of CS50x, I have decided not to openly share my code for CS50x assignments so as not to leak my solutions to any current students of CS50x.
