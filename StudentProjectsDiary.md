@@ -1,7 +1,7 @@
 # My Student Projects
 This repository contains all the coding projects I worked on studying computing languages from different sources.
 
-UPDATE: Due to academic policy of CS50x, I have decided not to openly share my code for CS50x assignments so as not to leak my solutions to any current students of CS50x. Instead, I will share my experience and what I learned working through each assignment. 
+UPDATE: Due to academic policy of CS50x, I have decided not to openly share my code for CS50x assignments so as not to leak my solutions to any current students of CS50x. Instead, I will share my thought and problem solving process and what I learned working through each assignment. 
 
 ## General Lessons Learned:
 
