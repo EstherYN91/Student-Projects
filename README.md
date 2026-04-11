@@ -120,6 +120,32 @@ I learned that a global variable must be stated as global when used in a functio
 
 ## Week 6 Assignment: DNA in Python
 
-The given function longest_match has two parameters: the DNA sequence and the STR subsequence. A for loop is run  over the entire length of the DNA sequence and a while loop is run to determine if there is a match between ths tart and end of the DNA substring and STR sequence. If there is a match, count is increased by 1 and the new start of the substring is at the end of STR sequence found. The longest_run variable is updated continuously with the higher of count and longest_run. 
+The given function longest_match has two parameters: the DNA sequence and the STR subsequence. A for loop is run  over the entire length of the DNA sequence and a while loop is run to determine if there is a match between the start and end of the DNA substring and STR sequence. If there is a match, count is increased by 1 and the new start of the substring is at the end of STR sequence found. The longest_run variable is updated continuously with the higher of count and longest_run. 
 
 To use command line argument in Python, sys needs to be imported. There is no argc in python so the number of command line arguments is calculated using len() function. To read the database file of people's STR counts into a variable, I initialized a list and then used the I/O functions in Python and csv.DictReader to append the data row by row into the list. To read the DNA sequence that must be identified into a variable, the read() function is used on the file that is opened. To find the longest match of each STR in the DNA sequence, I extracted the keys of the database file using keys() and stored them in a variable. I also initialised a dictionary to store the key value pairs of the longest match for each subsequence/STR. Then the elements in the list of keys are iterated from the first STR to the last, for every key which represents the STR/subsequence, the longest match is calculated using the DNA sequence file and STR and the dictionary is updated with key value pairs with the STR/subsequence as the key and the longest match value as the value in string format. To check the database for matching profiles, another dictionary is initialised and a duplicate of the database file is copied using copy.deepcopy(). For every element in the duplicate of database file, the first key is extracted using next(iter()) and removed using pop(). Then the remaining parts of the element is stored in the new dictionary initialized. Then the two dictionaries that store the key value pairs of STR:longest match value and the STR:count for each person is compared to see if there is a match. If a match is found for any key, the value of the "name" key from the database file is stored in a variable and printed. 
+
+## Week 7 Assignment: Movies
+
+A bunch of SQL keywords are used in this problem set: SELECT, FROM, WHERE, ORDER BY, COUNT(), LIKE, AVG(), JOIN-ON, DISTINCT, DESC, LIMIT, HAVING, IN, <>.
+
+## Week 7 Assignment: Songs
+
+A bunch of SQL keywords are used in this problem set: SELECT, FROM, WHERE, ORDER BY, AND, AVG(), DESC, LIKE, LIMIT, IN.
+
+## Week 7 Assignment: Fiftyville
+
+Steps I took in sequence to solve this using SQL queries: 
+1) Check out the description of the crime scene reports for related to the theft of CS50 duck
+2) Retrieve the transcript of interviews related to the theft of CS50 duck from witnesses
+3) Retrieve the possible license_plate of the thief of CS50 duck based on witness testimony from Ruth
+4) Retrieve the possible bank account number of the thief of CS50 duck based on witness testimony from Eugene
+5) Retrieve the flight id of the earliest flight out of Fiftyville on 29 July 2025 possibly linking to the thief of CS50 duck based on witness testimony from Raymond
+6) Retrieve the caller phone number on 28 July 2025 that lasted for less than 60 secs that could link to the thief of CS50 duck based on witness testimony from Raymond
+7) Retrieve the person_id from bank accounts that matches the bank accounts that withdrew on 28 July 2025 on Leggett Street
+8) Retrieve the list of people's names, phone_number, passport_number and license_plate from people tables that could be the thief
+9) Retrieve the passport_number of people associated with the flight_id that could carry the thief
+10) Retrieve the names of people who were on flight carrying the thief
+11) Comparing the list of names from people tables and names of people on flight carrying the thief, the thief is narrowed down to four possible names. After the caller information queried on line 20, one person is eliminated as a possible thief. Comparing the license plates that are associated with the possible thief, the thief is found.
+12) Find the accomplice of thief
+13) Find the city that thief escaped to
+
