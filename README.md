@@ -9,7 +9,7 @@ This is actually the first time I ever coded in C or any other programming langu
 
 * Code one part at a time. Break down the problem into different parts and make sure each part of the code works before proceeding to the next.
 * Try to combine similar conditionals together where possible.
-* Run the code through the mind to understand how it is working and whether there are any logic errors (that works for me)
+* Run the code through the mind to understand how it is working and whether there are any logic errors (that works for me).
 * If in doubt of a code, printf() in C or print() in Python will help to check if the output is as intended.
 
 ## Languages:
@@ -97,3 +97,29 @@ This isn't much of a practise other than understanding how to use arrow operator
 This problem set introduced writing header files and then including them in main program. I learned a new function called getrusage() which is undefined at the start. Before using the calculate function to calculate the time needed, the getrusage function is used to get the time before and after running an event. In calculate function, I learned what ru_utime.tv_sec is: the seconds it took for a process to run in user mode and ru_stime.tv_sec: the seconds it took for a process to run in system mode. 
 
 The hardest part about this problem set is writing the hash function and indexing the linked list. The pointers to memory also needs to be carefully assigned. The best hash function I was able to write so far is storing the words of a dictionary based on the first four alphabets of a word. I am planning to write a hash function that stores only one word in each bucket whiolly on my own in the future if time allows. The load function is written to store all the words in the dictionary into the hash table. The dictionary is first opened and stored in a FILE pointer. A buffer that stores the characters of each word is then created and allocated memory using malloc. fscanf is then used to read every string (word) of the dictionary into the buffer, if fscanf has not reached the end of the dictionary, a new word is created with memory allocated. Then strcpy is used to read the contents of the buffer into the word attribute of the new word, and an has index is assigned to this word using hash function. With the hash function returning the index, the index of the hash table stores this new word if there is nothing in that index. Otherwise, the next pointer of the new word points to the current word stored at at that index and the table pointer points at the new word (so words at stored at the beginning of the table index). Word count is finally incremented. The FILE is finally closed after all the words are added to hash table and the buffer memory is freed. The size function simply returns the word count previously incremented in load function. The unload funcction is written with for and while loops which iterates through all the indexes of the hash table, assigns a pointer to the next node and frees the memory of the current node until all memory of nodes are freed. 
+
+## Week 6 Assignment: Hello in Python
+
+This problem set taught me how to initialize a variable in Python and format a print statement. The main difference between Python and C is that variables in Python does not need to specify data type and placeholders are in {} in Python using f" " for format string. 
+
+## Week 6 Assignment: Mario Less and More in Python
+
+I learned how to use while and for loops in Python and how the + can be used to concatenate non integer elements to print in print function while the number of elements in print statement can be changed with arithmetic operators like *. I also learned that the end value of print function can be set to have space or the default is to have no space.
+
+## Week 6 Assignment: Cash in Python
+
+I separated the change into four conditions and used while loops to calculate the number of each coin type needed for the change. I used the round function to restrict any calculations of new change value to 2 decimal digits. 
+
+## Week 6 Assignment: Credit in Python
+
+I defined four functions to count the number of digits, extract the first digit, extract the first two digits and check if the card number is valid. In order to count and extract the digits, I had to convert the card number into a string using str() and then use slicing operation [:x] to retrieve x elements from the string. To determine if the card number is valid using luhn's algorithm, I separated the digits of the card number from the last digit to the first based on its position in the card number and appended it to one of two variables using append(). To print the correct card type, I set a status for card found to False and then use nested if statements to determine if the card is a certain type before setting the status for found to True. 
+
+## Week 6 Assignment: Readability in Python
+
+I learned that a global variable must be stated as global when used in a function and that function is defined using def function(). The function then needs to be run after the definition. I also learned what OOP means, which is that functions are related to objects or variables. An example is to use split() with the string variable.  
+
+## Week 6 Assignment: DNA in Python
+
+The given function longest_match has two parameters: the DNA sequence and the STR subsequence. A for loop is run  over the entire length of the DNA sequence and a while loop is run to determine if there is a match between ths tart and end of the DNA substring and STR sequence. If there is a match, count is increased by 1 and the new start of the substring is at the end of STR sequence found. The longest_run variable is updated continuously with the higher of count and longest_run. 
+
+To use command line argument in Python, sys needs to be imported. There is no argc in python so the number of command line arguments is calculated using len() function. To read the database file of people's STR counts into a variable, I initialized a list and then used the I/O functions in Python and csv.DictReader to append the data row by row into the list. To read the DNA sequence that must be identified into a variable, the read() function is used on the file that is opened. To find the longest match of each STR in the DNA sequence, I extracted the keys of the database file using keys() and stored them in a variable. I also initialised a dictionary to store the key value pairs of the longest match for each subsequence/STR. Then the elements in the list of keys are iterated from the first STR to the last, for every key which represents the STR/subsequence, the longest match is calculated using the DNA sequence file and STR and the dictionary is updated with key value pairs with the STR/subsequence as the key and the longest match value as the value in string format. To check the database for matching profiles, another dictionary is initialised and a duplicate of the database file is copied using copy.deepcopy(). For every element in the duplicate of database file, the first key is extracted using next(iter()) and removed using pop(). Then the remaining parts of the element is stored in the new dictionary initialized. Then the two dictionaries that store the key value pairs of STR:longest match value and the STR:count for each person is compared to see if there is a match. If a match is found for any key, the value of the "name" key from the database file is stored in a variable and printed. 
