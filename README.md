@@ -78,5 +78,14 @@ This is the first time I learned to use file I/O functions like fread(), fwrite(
 
 To copy the header information from input to output, I initialized an unsigned 8-bit integer array with size equivalent to HEADER_SIZE to store what was read from input file. Then fread() and fwrite() are used. To read samples from the input file to output file while changing it by the factor, I initialized a signed 16-bit integer variable to store updated data and used a while loop to update the 16-bit sample read from input by the factor, stored each 16 bit updated data in the signed integer variable before writing the new samples into output. Again, fread() and fwrite() are used. After that, fclose() is used on both input and output files.  
 
+## Week 4 Assignment: Recover
+
+The key challenge in this assignment is checking the first 4 8-bits to see if it is the starting of a jpeg file. Something new I had to research on was bitwise AND operator in order to read if the last byte of the first four bytes indicates a jpeg file. I also had to learn how to use sprintf() and how to set the format of the string to 3 digits integer.
+
+To copy the forensic image into jpeg files, an unsigned 8-bit integer array of size 512 bytes is created. A file pointer needs to be created and malloced memory of 8 bytes. An empty FILE also needs to be created to write jpeg data into and the name of the file needs to formatted with sprintf. A while loop is used to fread the contents of the forensic image into the integer array of size 512 bytes, first checking the first 4 bytes for jpeg signature, if there is already a jpeg file open, close the jpeg or else set the open status to yes. Then format the filename using sptintf and then open the file to write mode using fopen. Then if the open status of jpeg file is yes, fwrite what is read into the integer array into the currently opened file. Repeat this until everything is read and then close all the files. Finally, the allocated memory should be freed.   
+
+## Week 4 Assignment: Filter Less and More
+
+Primary mistake I made in this problem is storing the calculated values into the pixel values before all calculations are done, essentially changing the pixel values in future calculations. Another mistake is storing a value bigger than 255 in temporary containers that are defined as BYTES. The solutions I used consisted of nested for loops and if loops and ensuring that round() is used to ensure that floating values are converted to integers. For functions like blur and edges, I grouped the pixels into those at the edges, those at the corners and those in the middle portion and wrote separate code for them. The rest is about just plugging in the formulas specified in the problem set and ensuring the calculation formulas are correct.
 
 
